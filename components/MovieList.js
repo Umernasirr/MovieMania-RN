@@ -1,10 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Spacer = ({ children }) => {
-  return <View style={{ margin: 10 }}>{children}</View>;
+const MovieList = () => {
+  return (
+    <View>
+      <Text></Text>
+    </View>
+  );
 };
 
-export default Spacer;
+export default MovieList;
 
 const styles = StyleSheet.create({});
