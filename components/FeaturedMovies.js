@@ -51,7 +51,6 @@ const FeaturedMovies = ({ title, apiURL }) => {
   const [featured, setFeatured] = useState([]);
   useEffect(() => {
     const getFeatured = () => {
-      console.log(apiURL);
       TMDBAPI.get(`${apiURL}`).then((res) => {
         setFeatured(res.data.results);
       });

@@ -6,17 +6,25 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import { useTheme } from "react-native-paper";
+import { useTheme, Title, Button } from "react-native-paper";
 
 import { LinearGradient } from "expo-linear-gradient";
 
-const RenderCat = ({ name }) => (
-  <TouchableOpacity>
-    <LinearGradient style={styles.cat} colors={["#00C4CC", "#6A3BE4"]}>
-      <Text style={{ color: "white" }}>{name}</Text>
-    </LinearGradient>
-  </TouchableOpacity>
-);
+const RenderCat = ({ name }) => {
+  const { colors } = useTheme();
+
+  return (
+    <TouchableOpacity>
+      <Button
+        style={{ padding: 5, marginHorizontal: 5 }}
+        mode="outlined"
+        color={colors.white}
+      >
+        {name}
+      </Button>
+    </TouchableOpacity>
+  );
+};
 
 const CategoryButtons = ({ categories }) => {
   const { colors } = useTheme();

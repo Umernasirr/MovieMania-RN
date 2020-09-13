@@ -8,7 +8,7 @@ import { categories } from "../constants";
 import CategoryButtons from "../components/CategoryButtons";
 import FeaturedMovies from "../components/FeaturedMovies";
 import { ScrollView } from "react-native-gesture-handler";
-const Home = () => {
+const Home = ({ navigation }) => {
   const { colors } = useTheme();
 
   const [search, setSearch] = useState("");
@@ -33,6 +33,9 @@ const Home = () => {
             value={search}
             onChangeText={(text) => setSearch(text)}
             style={styles.input}
+            onSubmitEditing={() =>
+              navigation.navigate("Search", { query: search })
+            }
           />
         </View>
         <Spacer />
